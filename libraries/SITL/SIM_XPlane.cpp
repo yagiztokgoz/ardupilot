@@ -615,21 +615,21 @@ void XPlane::send_drefs(const struct sitl_input &input)
 
         case DRefType::ANGLE: {
             float v  = d->range * (input.servos[d->channel-1]-1500)/500.0;
-            cout << d->channel << "-" << v << "\n";
+            printf("%d - %f\n", d->channel-1, v);
             send_dref(d->name, v);
             break;
         }
 
         case DRefType::RANGE: {
             float v  = d->range * (input.servos[d->channel-1]-1000)/1000.0;
-            cout << d->channel << "-" << v << "\n";
+            printf("%d - %f\n", d->channel-1, v);
             send_dref(d->name, v);
             break;
         }
 
         case DRefType::FIXED: {
             send_dref(d->name, d->fixed_value);
-            cout << d->channel << "-" << v << "\n";
+            printf("%d - %f\n", d->channel-1, v);
             break;
         }
         }
