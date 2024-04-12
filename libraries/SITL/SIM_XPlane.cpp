@@ -492,6 +492,7 @@ bool XPlane::receive_data(void)
                     if (j->axis >= 1 && j->axis <= 6) {
                         float v = (data[j->axis] - j->input_min) / (j->input_max - j->input_min);
                         rcin[j->channel-1] = v;
+                        printf("JoystickRaw: %d - %f\n", j->channel-1, v);
                         rcin_chan_count = MAX(rcin_chan_count, j->channel);
                     }
                     break;
