@@ -629,7 +629,7 @@ void XPlane::send_drefs(const struct sitl_input &input)
 
         case DRefType::FIXED: {
             send_dref(d->name, d->fixed_value);
-            printf("%d - %f\n", d->channel-1, v);
+            //printf("%d - %f\n", d->channel-1, v);
             break;
         }
         }
